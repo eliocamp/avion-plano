@@ -143,6 +143,8 @@ geomap <- function(start, end) {
                hjust = 0.5, color = "red", size = 7) +
       annotate("text", x = 0, y = -d*b, label = paste0("Distancia en disco = ", round(dist[2]/1000), "km"),
                hjust = 0.5, color = "blue", size = 7) +
+      annotate("point", x = X0$x, y = X0$y, size = 3) +
+      annotate("point", x = Xf$x, y = Xf$y, size = 3) +
       coord_equal() +
       theme(plot.caption = element_text(hjust = 0.5, size = 14))
 }
