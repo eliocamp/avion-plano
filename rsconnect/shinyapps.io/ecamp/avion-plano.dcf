@@ -5,8 +5,8 @@ account: ecamp
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 239822
-bundleId: 1095056
+bundleId: 1095099
 url: https://ecamp.shinyapps.io/avion-plano/
-when: 1511566250.08977
+when: 1511568932.9671
 asMultiple: FALSE
 asStatic: FALSE

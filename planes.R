@@ -133,12 +133,16 @@ geomap <- function(start, end) {
    )
    dist <- distance(start, end)
    
-   dist <- paste0("Distancia en esfera = ", round(dist[1]/1000, 0), "km", 
-                  "    Distancia en disco = ", round(dist[2]/1000, 0), "km")
+   # dist <- paste0("Distancia en esfera = ", round(dist[1]/1000, 0), "km", 
+                  # "    Distancia en disco = ", round(dist[2]/1000, 0), "km")
    d <- pi*a
+   b <- 1.07
    ggplot(mapping = aes(x, y)) + base + paths + 
-      labs(caption = dist) +
-      # annotate("text", x = d, y = -d, label = dist, hjust = 1, vjust = -1)
+      # labs(caption = dist) +
+      annotate("text", x = 0, y = d*b, label = paste0("Distancia en esfera = ", round(dist[1]/1000), "km"),
+               hjust = 0.5, color = "red", size = 7) +
+      annotate("text", x = 0, y = -d*b, label = paste0("Distancia en disco = ", round(dist[2]/1000), "km"),
+               hjust = 0.5, color = "blue", size = 7) +
       coord_equal() +
       theme(plot.caption = element_text(hjust = 0.5, size = 14))
 }
