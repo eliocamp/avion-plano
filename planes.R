@@ -127,9 +127,9 @@ geomap <- function(start, end) {
    flat[, c("lon", "lat") := xy2lonlat(x, y)]
    
    paths <- list(geom_path(data = esphere, 
-                           color = "red", size = 1), 
+                           color = "red", size = 1, lineend = "butt"), 
                  geom_line(data = flat,
-                           color = "blue", size = 1) 
+                           color = "blue", size = 1, lineend = "butt") 
    )
    dist <- distance(start, end)
    
